@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles-variables.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--body-color);
+    padding: 35px;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 10px 21px #c1c1c1;
+    border-radius: 33px;
+
+    margin: 10px auto;
+    max-width: 1080px;
+    min-width: 220px;
+    height: 720px;
+
+    section {
+        padding: 39px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .transparencia1 {
+        filter: alpha(opacity=10);
+        opacity: 0.1;
+        -moz-opacity: 0.1;
+        -webkit-opacity: 0.1;
+    }
+
+    .card {
+        background: -webkit-linear-gradient( var(--color-1), var(--color-2));
+        color: var(--body-color);
+        border-radius: 33px 0 0 33px;
+        text-align: center;
+        flex: 1;
+        gap: 18px;
+        height: 100%;
+        
+        img.background{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .card-main {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 2;
+
+            img{
+                width: 55%;
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+        .card-footer{
+            margin-top: 40%;
+            z-index: 2;
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .form {
+        background-color: aqua;
+        border-radius: 0 33px 33px 0;
+        flex: 1;
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 450px ) {
+    body {
+        padding: 15px;
+    }
+    main {
+        flex-direction: column;
+
+        .card {
+            border-radius: 33px 33px 0 0;
+            width: 100%;    
+
+            .card-main{
+                display: flex;
+                flex-direction: column;
+                gap: 11px;
+
+
+                h1{
+                    font-size: 21px;
+                }
+                p {
+                    font-size: small;
+                }
+            }
+            .card-footer{
+                margin-top: 6%;
+                h2{
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .form {
+            border-radius: 0 0 33px 33px;
+            width: 100%;
+        }
+    }
+}
+
+// @media (mix-width: 500px ) {
+//     main {
+//         width: 400px;
+//     }
+// }
+
