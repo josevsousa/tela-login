@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
     selector: 'bottom-primary',
     standalone: true,
     template: `
-        <h1>Ola bottom-primary!</h1>
+        <button>entrar</button>
     `,
     styleUrl: "./primary-bottom.component.scss"
 })

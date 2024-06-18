@@ -10,9 +10,8 @@
 }
 
 body {
-    background: var(--body-color);
+    // background: var(--body-color);
     padding: 35px;
-    height: 100%;
 }
 
 .section-main {
@@ -47,23 +46,63 @@ body {
     }
 
     .form {
-        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--body-color);
         border-radius: 0 33px 33px 0;
-        padding: 39px;
+        // padding: 39px;
         flex: 1;
         height: 100%;
+        min-height: 300px;
+
+        section {
+            padding: 51px
+        }
+
+        h1 {
+
+        }
+        img {
+
+        }
+        p {
+
+        }
+    
+        .form-section {
+            width: 100%;
+            text-align: center;    
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 7px;
+                padding: 24px 0;          
+            }
+        }
+
+        .section-social {
+            a {
+                img {
+                    width: 38px;
+                }
+            }
+        }
     }
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 710px) {
     body {
-        padding: 15px;
+        padding: 18px;
     }
 
     .section-main {
         flex-direction: column;
-
+        height: auto;
         .card {
             border-radius: 33px 33px 0 0;
             width: 100%;
@@ -91,14 +130,31 @@ body {
                 margin-top: 6%;
 
                 h2 {
-                font-size: 13px;
+                font-size: 13px !important;
                 }
             }
         }
 
         .form {
-        border-radius: 0 0 33px 33px;
-        width: 100%;
+            border-radius: 0 0 33px 33px;
+            width: 100%;
+            padding: 15px;
+            
+            section {
+                padding: 7px
+            }
+            
+            .section-social{
+                img {
+                    width: 26px !important;
+                }
+            }
+        }
+    }
+
+    .input-form {
+        input {
+            height: 36px;
         }
     }
 
