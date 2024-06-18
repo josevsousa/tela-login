@@ -1,0 +1,127 @@
+
+.section-main {
+    display: flex;
+    position: sticky;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 10px 21px #c1c1c1;
+    border-radius: 33px;
+  
+    margin: 10px auto;
+    max-width: 1080px;
+    min-width: 220px;
+    height: 720px;
+  
+    section {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+  
+    .card {
+      background: -webkit-linear-gradient(var(--color-1), var(--color-2));
+      color: var(--body-color);
+      border-radius: 33px 0 0 33px;
+      text-align: center;
+      flex: 1;
+      gap: 18px;
+      height: 100%;
+  
+      .card-image {
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 1;
+        border-radius: 33px 0 0 33px;
+        opacity: 0.2;
+      }
+  
+      .card-main {
+        display: flex;
+        flex-direction: column;
+        padding: 42px;
+        gap: 15px;
+        z-index: 2;
+  
+        img {
+          width: 55%;
+          margin: 0 auto;
+        }
+  
+        h1 {
+          font-size: 28px;
+        }
+      }
+  
+      .card-footer {
+        margin-top: 30%;
+        z-index: 2;
+        padding: 39px;
+  
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+  
+    .form {
+      background-color: aqua;
+      border-radius: 0 33px 33px 0;
+      padding: 39px;
+      flex: 1;
+      height: 100%;
+    }
+  
+  }
+  
+  @media (max-width: 450px) {
+    body {
+      padding: 15px;
+    }
+  
+    .section-main {
+      flex-direction: column;
+  
+      .card {
+        border-radius: 33px 33px 0 0;
+        width: 100%;
+  
+        .card-image {
+          border-radius: 33px 33px 0 0;
+        }
+  
+        .card-main {
+          display: flex;
+          flex-direction: column;
+          gap: 11px;
+  
+  
+          h1 {
+            font-size: 21px;
+          }
+  
+          p {
+            font-size: small;
+          }
+        }
+  
+        .card-footer {
+          margin-top: 6%;
+  
+          h2 {
+            font-size: 13px;
+          }
+        }
+      }
+  
+      .form {
+        border-radius: 0 0 33px 33px;
+        width: 100%;
+      }
+    }
+  }
