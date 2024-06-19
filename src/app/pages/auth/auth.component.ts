@@ -1,16 +1,14 @@
 import { BoundElementProperty } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { BottomPrimaryComponent } from '../../components/primary-bottom/primary-bottom.component';
 import { SectioncardComponent } from '../../components/section-card/section-card.component';
-import { InputPrimaryComponent } from '../../components/input-primary/input-primary.component';
+import { SectionFormComponent } from '../../components/section-form/section-form.component';
 
 @Component({
   selector: 'app-auth',
   standalone: true,
   imports: [
-    BottomPrimaryComponent,
-    InputPrimaryComponent,
-    SectioncardComponent
+    SectioncardComponent,
+    SectionFormComponent
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss'

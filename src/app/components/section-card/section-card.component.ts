@@ -4,11 +4,11 @@ import { Component, Input } from '@angular/core';
     selector: 'section-card',
     standalone: true,
     template: `
-       <section class="card">
+       <section class="card-wrapper">
             <div class="card-image" style="background-image: url('../../../assets/imagens/card-image-1.png');"></div>
             <div class="card-main">
                 <img src="../../../assets/logo.svg">
-                <h1>Dev {{tipoCard}}</h1>
+                <h1>Dev Freela</h1>
                 <p>Lorem ipsum dolor sit amet consectetur. Tortor varius suspendisse arcu amet scelerisque tincidunt neque
                     posuere. Vehicula lectus eget</p>
             </div>
@@ -24,6 +24,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class SectioncardComponent { 
-
     @Input() tipoCard!: string;
 }

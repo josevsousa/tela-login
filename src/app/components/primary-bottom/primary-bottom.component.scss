@@ -1,0 +1,11 @@
+button {    
+    padding: 14px 0;
+    width: 100%;
+    border-radius: 27px;
+    font-size: large;
+    font-weight: 700;
+    color: var(--body-color);
+    border: none;
+    background: -webkit-linear-gradient(0.3turn, var(--color-1), var(--color-2));
+    cursor: pointer;        
+}

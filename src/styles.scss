@@ -1,16 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles-variables.scss";
+@import "https://fonts.googleapis.com/css2?family=Reggae+One&display=swap";
+
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
-    // background: var(--body-color);
     padding: 35px;
 }
 
@@ -33,13 +34,12 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: end;
+        gap: 9px;
     }
 
     .card {
-        background: -webkit-linear-gradient(var(--color-1), var(--color-2));
-        color: var(--body-color);
+        background: -webkit-linear-gradient(0.4turn, var(--color-2), var(--color-1));
         border-radius: 33px 0 0 33px;
-        text-align: center;
         flex: 1;
         gap: 18px;
         height: 100%;
@@ -52,17 +52,26 @@ body {
         align-items: center;
         background-color: var(--body-color);
         border-radius: 0 33px 33px 0;
-        // padding: 39px;
         flex: 1;
         height: 100%;
         min-height: 300px;
 
         section {
-            padding: 51px
+            padding: 70px;
+            
+            h1 {
+                font-weight: 400;
+                font-size: 22px;
+                color: var(--text-color-1);
+            }
+            
+            p {
+                color: var(--color-text-2);
+            }
         }
 
         h1 {
-
+            
         }
         img {
 
@@ -79,7 +88,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                gap: 7px;
+                gap: 15px;
                 padding: 24px 0;          
             }
         }
@@ -103,35 +112,38 @@ body {
     .section-main {
         flex-direction: column;
         height: auto;
+
         .card {
             border-radius: 33px 33px 0 0;
             width: 100%;
-
-            .card-image {
-                border-radius: 33px 33px 0 0;
-            }
-
-            .card-main {
-                display: flex;
-                flex-direction: column;
-                gap: 11px;
-
-
-                h1 {
-                font-size: 21px;
+            
+            .card-wrapper{
+    
+                .card-image {
+                    border-radius: 33px 33px 0 0;
                 }
-
-                p {
-                font-size: small;
+    
+                .card-main {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 11px;
+    
+                    h1 {
+                        font-size: 21px;
+                    }
+    
+                    p {
+                        font-size: small;
+                    }
                 }
-            }
-
-            .card-footer {
-                margin-top: 6%;
-
-                h2 {
-                font-size: 13px !important;
-                }
+    
+                .card-footer {
+                    margin-top: 6% !important;
+    
+                    h2 {
+                    font-size: 10px !important;
+                    }
+                }        
             }
         }
 
@@ -141,7 +153,7 @@ body {
             padding: 15px;
             
             section {
-                padding: 7px
+                padding: 7px;
             }
             
             .section-social{
@@ -159,9 +171,3 @@ body {
     }
 
 }
-
-// @media (mix-width: 500px ) {
-//     main {
-//         width: 400px;
-//     }
-// }

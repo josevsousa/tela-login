@@ -1,38 +1,45 @@
-.card-image {
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 1;
-  border-radius: 33px 0 0 33px;
-  opacity: 0.2;
-}
+.card-wrapper {
+  color: var(--body-color);
+  text-align: center;
+  height: 100%;
 
-.card-main {
-  display: flex;
-  flex-direction: column;
-  padding: 42px;
-  gap: 15px;
-  z-index: 2;
+  .card-image {
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+      border-radius: 33px 0 0 33px;
+      opacity: 0.1;
+    }
 
-  img {
-    width: 55%;
-    margin: 0 auto;
-  }
+    .card-main {
+      display: flex;
+      flex-direction: column;
+      padding: 42px;
+      gap: 8px;
+      z-index: 2;
 
-  h1 {
-    font-size: 28px;
-  }
-}
+      img {
+        width: 46%;
+        margin: 0 auto;
+      }
 
-.card-footer {
-  margin-top: 30%;
-  z-index: 2;
-  padding: 39px;
+      h1 {
+        font-size: 28px;
+        font-family: 'Reggae One', sans-serif;
+      }
+    }
 
-  h2 {
-    font-size: 18px;
-  }
+    .card-footer {
+      margin-top: 30%;
+      z-index: 2;
+      padding: 39px;
+
+      h2 {
+        font-size: 18px;
+      }
+    }
 }

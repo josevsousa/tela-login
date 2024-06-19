@@ -1,4 +1,8 @@
 <div class="input-form">
-    <img src="../../../assets/input-icons/email.svg">
-    <input id="senha" placeholder="senha" >
+    @if (title === 'email') {
+        <img src="../../../assets/input-icons/email.svg">
+    }@else {
+        <img src="../../../assets/input-icons/lock.svg">
+    }   
+    <input id="{{title}}" placeholder="{{title}}" type="{{title}}">
 </div>
