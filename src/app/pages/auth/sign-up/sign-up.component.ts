@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
 import { SectioncardComponent } from '../../../components/section-card/section-card.component';
-import { SectionFormComponent } from '../../../components/section-form/section-form.component';
+import { InputPrimaryComponent } from '../../../components/input-primary/input-primary.component';
+import { BottomPrimaryComponent } from '../../../components/primary-bottom/primary-bottom.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [SectioncardComponent, SectionFormComponent],
+  imports: [
+    RouterModule,
+    SectioncardComponent,
+    InputPrimaryComponent,
+    BottomPrimaryComponent ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })

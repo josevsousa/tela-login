@@ -1,5 +1,33 @@
 
 <section class="section-main">
-    <section-card class="card" [tipoCard]="'sign-up'"></section-card>
-    <section-form class="form"></section-form>
+    <section-card [tipoCard]="'sign-up'"></section-card>
+    <section class="form">
+        <section>
+            
+            <h1>CADASTRE-SE</h1>
+
+            <img src="../../../assets/imagens/photo-user.png" >
+            <button class="btn-camera">
+                <img src="../../../assets/icons/camera.svg">
+            </button>
+            
+            <div class="form-section">
+                <form>
+                    <input-primary inp-title="name"></input-primary>
+                    <input-primary inp-title="email"></input-primary>
+                    <input-primary inp-title="password"></input-primary>
+                    <bottom-primary btn-title="entrar"></bottom-primary>
+                </form>
+                <div class="form-links">
+                    <a>já tem uma conta?</a>
+                    <a routerLink="./auth"><b>tela de login!</b> </a>
+                </div>
+            </div>
+        
+            <p>---------- *** ----------</p>
+            
+            <a class="link-back" routerLink="/">voltar</a>
+            
+        </section>
+    </section>
 </section>
