@@ -4,42 +4,55 @@
   height: 100%;
 
   .card-image {
-      width: -webkit-fill-available;
-      height: -webkit-fill-available;
-      position: absolute;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      z-index: 1;
-      border-radius: 33px 0 0 33px;
-      opacity: 0.1;
-    }
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 33px 0 0 33px;
+    opacity: 0.1;
+  }
 
-    .card-main {
+  .card-main {
+    display: flex;
+    flex-direction: column;
+    padding: 42px;
+    gap: 8px;
+    z-index: 2;
+
+    .img-wrapper {
       display: flex;
-      flex-direction: column;
-      padding: 42px;
-      gap: 8px;
-      z-index: 2;
+      width: 144px;
+      height: 144px;
+      margin: 0 auto;
 
       img {
-        width: 46%;
-        margin: 0 auto;
-      }
-
-      h1 {
-        font-size: 28px;
-        font-family: 'Reggae One', sans-serif;
+        width: -webkit-fill-available;
+        border-radius: 50%;
+        border: 9px solid var(--color-1);
       }
     }
 
-    .card-footer {
-      margin-top: 30%;
-      z-index: 2;
-      padding: 39px;
-
-      h2 {
-        font-size: 18px;
-      }
+    img {
+      width: 46%;
+      margin: 0 auto;
     }
+
+    h1 {
+      font-size: 28px;
+      font-family: 'Reggae One', sans-serif;
+    }
+  }
+
+  .card-footer {
+    margin-top: 30%;
+    z-index: 2;
+    padding: 39px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
 }
