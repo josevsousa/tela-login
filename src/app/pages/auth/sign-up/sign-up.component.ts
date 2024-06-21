@@ -12,8 +12,7 @@ import { RouterModule } from '@angular/router';
     SectioncardComponent,
     InputPrimaryComponent,
     BottomPrimaryComponent ],
-  templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.scss'
+  templateUrl: './sign-up.component.html'
 })
 export class SignUpComponent {
 

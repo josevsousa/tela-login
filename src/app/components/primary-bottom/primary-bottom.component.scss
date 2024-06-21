@@ -5,6 +5,7 @@ button {
     font-size: large;
     font-weight: 700;
     color: var(--body-color);
+    box-shadow: 5px 4px 8px #c1c1c1;
     border: none;
     background: -webkit-linear-gradient(0.3turn, var(--color-1), var(--color-2));
     cursor: pointer;        

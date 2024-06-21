@@ -199,6 +199,14 @@ body {
         }
       }
     }
+
+    .home {
+      .home-header {
+        .home-navBar {
+          border-radius: 0px !important;
+        }
+      }
+    }
   }
 
   .input-form {
@@ -206,5 +214,7 @@ body {
       height: 36px;
     }
   }
+
+
 
 }

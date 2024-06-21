@@ -23,6 +23,6 @@ import { Component, Input } from '@angular/core';
     styleUrl: "./section-card.component.scss"
 })
 
-export class SectioncardComponent { 
+export class SectioncardComponent {
     @Input() tipoCard!: string;
 }

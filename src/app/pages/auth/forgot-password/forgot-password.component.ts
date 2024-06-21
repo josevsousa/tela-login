@@ -12,8 +12,7 @@ import { RouterModule } from '@angular/router';
     SectioncardComponent,
     InputPrimaryComponent,
     BottomPrimaryComponent],
-  templateUrl: './forgot-password.component.html',
-  styleUrl: './forgot-password.component.scss'
+  templateUrl: './forgot-password.component.html'
 })
 export class ForgotPasswordComponent {
 
