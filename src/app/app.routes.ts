@@ -3,6 +3,8 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { SignUpComponent } from './pages/auth/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { HomeComponent } from './pages/main/home/home.component';
+import { authGuard } from './guardRouters/auth.guard';
+import { noAuthGuard } from './guardRouters/no-auth.guard'
 
 export const routes: Routes = [
     {
@@ -12,19 +14,23 @@ export const routes: Routes = [
     },
     {
         path: 'auth',
-        component: AuthComponent
+        component: AuthComponent,
+        canActivate:[authGuard]
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate:[noAuthGuard]
     },
     {
         path: 'signUp',
-        component: SignUpComponent
+        component: SignUpComponent,
+        canActivate:[authGuard]
     },
     {
         path: 'forgotPassword',
-        component: ForgotPasswordComponent
+        component: ForgotPasswordComponent,
+        canActivate:[authGuard]
     },
     {
         path: '**',
