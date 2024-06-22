@@ -3,6 +3,7 @@
 [FIREBASE__BADGE]: https://img.shields.io/badge/Firebase-F00?style=for-the-badge&logo=firebase
 [ANGULAR__BADGE]: https://img.shields.io/badge/Angular-red?style=for-the-badge&logo=angular
 [FIGMA__BADGE]: https://img.shields.io/badge/Figma-white?style=for-the-badge&logo=figma
+[NETLIFY__BADGE]: https://img.shields.io/badge/Netlify-black?style=for-the-badge&logo=netlify
 
 
 <h1 align="center" style="font-weight: bold;">Tela Login </h1>
@@ -10,9 +11,9 @@
 ![angular][ANGULAR__BADGE]
 ![typescript][TYPESCRIPT__BADGE]
 ![javascript][JAVASCRIPT__BADGE]
-![javascript][FIREBASE__BADGE]
-![javascript][FIGMA__BADGE]
-
+![firebase][FIREBASE__BADGE]
+![netlify][NETLIFY__BADGE]
+![figma][FIGMA__BADGE]
 
 <p align="center">
  <a href="#about">Sobre</a> 

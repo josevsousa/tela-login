@@ -51,8 +51,11 @@
     z-index: 2;
     padding: 39px;
 
-    h2 {
-      font-size: 18px;
-    }
+      a {
+        
+        font-size: 18px;
+        text-decoration: none;
+        color: var(--color-text-3);
+      }
   }
 }

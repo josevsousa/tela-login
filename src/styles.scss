@@ -147,6 +147,7 @@ body {
       width: 100%;
 
       .card-wrapper {
+      
         .card-image {
           border-radius: 33px 33px 0 0;
         }
@@ -166,11 +167,12 @@ body {
         }
 
         .card-footer {
-          margin-top: 1% !important;
+          display: none;
+          // margin-top: 1% !important;
 
-          h2 {
-            font-size: 10px !important;
-          }
+          // h2 {
+          //   font-size: 10px !important;
+          // }
         }
       }
     }

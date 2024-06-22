@@ -22,7 +22,7 @@ import { Component, Input } from '@angular/core';
 
             <div class="card-footer">
                 <p>------- # ---------</p>
-                <h2>Dev: josevicentedesousa.surge.sh</h2>
+                   <a href="http://josevicentedesousa.netlify.app">Dev: josevicentedesousa.netlify.app</a>
             </div>
 
         </section>
