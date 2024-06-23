@@ -21,7 +21,7 @@ import { FormService } from '../../services/form.service';
             <input-primary inp-title="password" [control]="form.controls.password"></input-primary>
           }
           @if (form.valid) {
-            <bottom-primary btn-title="entrar" (click)="onSubmit()"></bottom-primary>
+            <bottom-primary btn-title="{{formTipo}}" (click)="onSubmit()"></bottom-primary>
           }@else {
           <bottom-primary-disabled btn-title="{{formTipo}}"></bottom-primary-disabled>
           }
