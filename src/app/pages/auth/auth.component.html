@@ -10,10 +10,16 @@
             <p>Entre no app do Dev Freela e veja um exemplo real de login no Firebase do google!</p>
 
             <div class="form-section">
-                <form>
-                    <input-primary inp-title="email"></input-primary>
-                    <input-primary inp-title="password"></input-primary>
-                    <bottom-primary btn-title="entrar"></bottom-primary>
+                <form [formGroup]="form">
+                    <input-primary inp-title="email" [control]="form.controls.email"></input-primary>
+                    <input-primary inp-title="password" [control]="form.controls.password"></input-primary>
+
+                    @if (form.valid) {
+                        <bottom-primary btn-title="entrar" (click)="onSubmit()"></bottom-primary> 
+                    }@else {
+                        <bottom-primary-disabled btn-title="entrar"></bottom-primary-disabled>
+                    }
+                    
                 </form>
                 <div class="form-links">
                     <a routerLink="/signUp">registrar!</a>

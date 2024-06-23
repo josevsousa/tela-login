@@ -8,7 +8,7 @@ export const authGuard: CanActivateFn = ( next: ActivatedRouteSnapshot, state: R
     const router = inject(Router);
     const firebaseService = inject(FirebaseService);
 
-    if(firebaseService.stateUser()) {
+    if(firebaseService.getAuth()) {
         router.navigate(['/home']);
         return false;
     } else {

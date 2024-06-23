@@ -9,7 +9,7 @@ export const noAuthGuard: CanActivateFn = ( next: ActivatedRouteSnapshot, state:
     const router = inject(Router);
     const firebaseService = inject(FirebaseService);
 
-    if(firebaseService.stateUser()) {
+    if(firebaseService.getAuth()) {
         return true;
     } else {
         router.navigate(['/auth']);

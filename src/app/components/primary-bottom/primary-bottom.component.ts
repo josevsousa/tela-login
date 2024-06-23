@@ -1,12 +1,12 @@
 import { UpperCasePipe } from '@angular/common';
-import {Component, EventEmitter, Input, Output, Pipe} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'bottom-primary',
     standalone: true,
     imports: [ UpperCasePipe ],
     template: `
-        <button>
+        <button  (click)="submit()">
             @if (!loading) {
                 {{ title | uppercase }}
             }@else {
@@ -18,13 +18,14 @@ import {Component, EventEmitter, Input, Output, Pipe} from '@angular/core';
 })
 
 export class BottomPrimaryComponent{
+
     @Input('btn-title') title!: string;
-    @Input() disabled: boolean = false;
     @Input() loading: boolean = false;
     
     @Output("submit") onSubmit = new EventEmitter();
 
     submit(){
+        console.log("passei aqui A");
         this.onSubmit.emit();
     }
 }
