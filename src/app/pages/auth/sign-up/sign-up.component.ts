@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { SectioncardComponent } from '../../../components/section-card/section-card.component';
-import { InputPrimaryComponent } from '../../../components/input-primary/input-primary.component';
-import { BottomPrimaryComponent } from '../../../components/primary-bottom/primary-bottom.component';
+import { SectioncardComponent } from '../../../components-shared/section-card/section-card.component';
 import { RouterModule } from '@angular/router';
+import { FormfullComponent } from '../../../components-shared/form-full/form-full.component';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule,
     SectioncardComponent,
-    InputPrimaryComponent,
-    BottomPrimaryComponent ],
+    FormfullComponent
+  ],
   templateUrl: './sign-up.component.html'
 })
 export class SignUpComponent {
