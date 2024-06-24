@@ -16,7 +16,6 @@ html {
 body {
   padding: 35px;
   background: -webkit-linear-gradient(var(--color-3), var(--body-color));
-
 }
 
 .section-main {
@@ -27,6 +26,7 @@ body {
   align-items: center;
   box-shadow: 8px 10px 21px #c1c1c1;
   border-radius: 33px;
+  background: var(--color-text-3);
 
   margin: 10px auto;
   max-width: 1080px;
