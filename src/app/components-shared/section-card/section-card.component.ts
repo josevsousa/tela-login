@@ -1,25 +1,23 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { NgClass } from '@angular/common';
+import { UtilsService } from '../../services/utils.service';
+
 
 @Component({
     selector: 'section-card',
     standalone: true,
+    imports: [NgClass],
     template: `
        <section class="card-wrapper">
             <div class="card-image" style="background-image: url('../../../assets/imagens/card-image-1.png');"></div>
             <div class="card-main">
-                @if(tipoCard){
-                    <img src="../../../assets/logo.svg">
-                    <h1>Dev freela</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur. Tortor varius suspendisse arcu amet scelerisque tincidunt neque posuere. Vehicula lectus eget</p>
-                    
-                }@else {
-                    <div class="img-wrapper">
-                        <img src="{{urlUserPhoto}}">
+                    <div [ngClass]="tipoCard ? '' : 'img-wrapper'">
+                        <img src="{{photoUrl}}">
                     </div>
-                        <h1>Ola pessoa!</h1>
+                        <h1>Ola {{displayName}}!</h1>
                     <p>Seja bem vindo a ess aplicação de tela de login!</p>
-                }
+               
             </div>
 
             <div class="card-footer">
@@ -32,7 +30,21 @@ import { AuthService } from '../../services/auth.service';
     styleUrl: "./section-card.component.scss"
 })
 
-export class SectioncardComponent {
+export class SectioncardComponent implements OnInit {
     @Input() tipoCard: boolean = true;
-    urlUserPhoto: string = "../../../assets/imagens/photo-user_.png";
+
+    utilsService = inject(UtilsService);
+
+    photoUrl: string = "../../../assets/logo.svg";
+    displayName: string = "pessoa";
+
+    ngOnInit(): void {
+        if(!this.tipoCard){
+            const user =  JSON.parse(this.utilsService.getFromLocalStorage('user'));
+            console.log("--------- ", user);
+            this.photoUrl = user.photoUrl;
+            this.displayName = user.displayName;
+        }
+    }
+
 }
