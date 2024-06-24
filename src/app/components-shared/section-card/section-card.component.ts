@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'section-card',
@@ -11,6 +12,7 @@ import { Component, Input } from '@angular/core';
                     <img src="../../../assets/logo.svg">
                     <h1>Dev freela</h1>
                     <p>Lorem ipsum dolor sit amet consectetur. Tortor varius suspendisse arcu amet scelerisque tincidunt neque posuere. Vehicula lectus eget</p>
+                    
                 }@else {
                     <div class="img-wrapper">
                         <img src="{{urlUserPhoto}}">

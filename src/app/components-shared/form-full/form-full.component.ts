@@ -43,11 +43,9 @@ export class FormfullComponent implements OnInit{
     }
 
     form = new FormGroup({
-        uid: new FormControl(''),
         name: new FormControl(''),
         email: new FormControl('', [Validators.required, Validators.email]),
         password: new FormControl('', Validators.required)
-
     })
 
     onSubmit(){

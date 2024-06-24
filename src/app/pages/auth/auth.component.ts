@@ -3,6 +3,7 @@ import { SectioncardComponent } from '../../components-shared/section-card/secti
 
 import {  RouterModule } from '@angular/router';
 import { FormfullComponent } from '../../components-shared/form-full/form-full.component';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -13,8 +14,18 @@ import { FormfullComponent } from '../../components-shared/form-full/form-full.c
     SectioncardComponent,
     FormfullComponent
   ],
-  templateUrl: './auth.component.html'
+  templateUrl: './auth.component.html',
+  styles: `.section-social a{ cursor: pointer}`
 })
 export class AuthComponent {
 
+  auth = inject(AuthService);
+
+  login(): void{
+    this.auth.loginGoogle();
+  }
+  logout(): void{
+    this.auth.desconectarGoogle()
+  }
+  
 }

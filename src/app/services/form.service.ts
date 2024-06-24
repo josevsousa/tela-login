@@ -1,15 +1,28 @@
-import { Injectable } from "@angular/core";
-import { Form } from "../interfaces/form.interface";
+import { Injectable, inject } from "@angular/core";
+import { User } from "../interfaces/user.interface";
 import { AbstractControl, FormGroup } from "@angular/forms";
+import { AuthService } from "./auth.service";
 
 @Injectable({ providedIn:'root' })
 
 export class FormService {
 
-   sendForm(form: string, tipoForm: string){
+   authService = inject(AuthService);
 
-    console.log("tipo form: ", tipoForm);
-    console.log(JSON.parse(form));
-   }
+   sendForm(form: string, tipoForm: string){
+    
+      if (tipoForm == 'login') {
+
+          this.authService.signIn(form);
+      
+      } else if(tipoForm == 'registrar'){
+      
+         this.authService.signUp(form);
+      
+      } else {
+         this.authService.forgotPassword(form);
+      }
+
+ }
 
 }
