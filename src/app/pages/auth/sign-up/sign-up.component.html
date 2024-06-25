@@ -5,9 +5,9 @@
 
             <h1>CADASTRE-SE</h1>
 
-            <img src="{{photoAvatar}}">
+        <div class="imgAvatar" [style]="getImg()"></div>
 
-            <button class="btn-camera" (click)="getPhoto()">
+            <button class="btn-camera" (click)="takeImage()">
                 <img src="../../../assets/icons/camera.svg">
             </button>
 

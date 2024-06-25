@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,18 @@ export class UtilsService {
   delFromLocalStorage(key: string) {
     return localStorage.removeItem(key);
   }
+
+      // ========== Camera ==========
+      takePicture(promptLabelHeader: string) {
+        return  Camera.getPhoto({
+            quality: 90,
+            allowEditing: true,
+            resultType: CameraResultType.DataUrl,
+            source: CameraSource.Prompt,
+            promptLabelHeader,
+            promptLabelPhoto: 'Selecione uma imagen',
+            promptLabelPicture: 'Toma uma photo'
+        });
+    };
 
 }

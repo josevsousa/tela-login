@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 import { NgClass } from '@angular/common';
 import { UtilsService } from '../../services/utils.service';
 
