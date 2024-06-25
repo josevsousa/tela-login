@@ -16,4 +16,9 @@ import { FormfullComponent } from '../../../components-shared/form-full/form-ful
 })
 export class SignUpComponent {
 
+  photoAvatar: string = "../../../assets/imagens/photo-user.png";
+
+  getPhoto(): void {
+    console.log('capturar photo!!')
+  }
 }

@@ -45,7 +45,8 @@ export class AuthService {
   // ====== desconectar Usuario ====
   desconectarGoogle() {
     this.auth.signOut().then(()=> {
-      localStorage.clear();
+      // localStorage.clear();
+      this.utilsSvc.delFromLocalStorage('user');
       this.utilsSvc.routerLink('/');
     });
   }

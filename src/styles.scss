@@ -15,7 +15,8 @@ html {
 
 body {
   padding: 35px;
-  background: -webkit-linear-gradient(var(--color-3), var(--body-color));
+  // background: -webkit-linear-gradient(var(--color-3), var(--body-color));
+  background: var(--color-3);
 }
 
 .section-main {
