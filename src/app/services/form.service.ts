@@ -12,13 +12,9 @@ export class FormService {
    sendForm(form: string, tipoForm: string){
     
       if (tipoForm == 'login') {
-
           this.authService.signIn(form);
-      
       } else if(tipoForm == 'registrar'){
-      
          this.authService.signUp(form);
-      
       } else {
          this.authService.forgotPassword(form);
       }

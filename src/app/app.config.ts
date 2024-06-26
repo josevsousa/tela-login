@@ -9,6 +9,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 import { getAuth, provideAuth } from '@angular/fire/auth';
 
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+defineCustomElements(window);
+
+
 export const appConfig: ApplicationConfig = {
   providers: 
     [ 

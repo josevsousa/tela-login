@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
 
     //=========== Tirar/Selecionar Photo ==========
     async takeImage(){
-      let dataUrl = (await this.utilsService.takePicture('Image do produto')).dataUrl;
+      let dataUrl = (await this.utilsService.takePicture('Sua Imagem para o app')).dataUrl;
       this.photoAvatar = dataUrl;
     }
   

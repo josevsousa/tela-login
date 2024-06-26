@@ -51,7 +51,7 @@ export class AuthService {
     });
   }
 
-    // login cadastro recuperar-senha
+    // login cadastro
     signIn(form: string){
         console.log(JSON.parse(form));
     }
