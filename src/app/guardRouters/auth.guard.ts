@@ -2,14 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UtilsService } from '../services/utils.service';
-import { AuthService } from '../services/auth.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  authService = inject(AuthService);
+  firebaseService = inject(FirebaseService);
   utilsService = inject(UtilsService);
 
   canActivate(
@@ -17,8 +17,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
+    const user = this.utilsService.getFromLocalStorage('user');
+    const userGoogle = this.utilsService.getFromLocalStorage('userGoogle') 
+
     //esta online true
-    if (this.utilsService.getFromLocalStorage('user')) {
+    if (user || userGoogle) {
       this.utilsService.routerLink('/home');
       return false;
     }

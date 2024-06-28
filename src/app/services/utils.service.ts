@@ -8,8 +8,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 export class UtilsService {
 
   router = inject(Router);
-
-
+ 
   // ============ Router Link =============
   routerLink(url: string) {
     return this.router.navigateByUrl(url);

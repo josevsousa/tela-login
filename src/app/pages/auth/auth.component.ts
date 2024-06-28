@@ -3,7 +3,7 @@ import { SectioncardComponent } from '../../components-shared/section-card/secti
 
 import {  RouterModule } from '@angular/router';
 import { FormfullComponent } from '../../components-shared/form-full/form-full.component';
-import { AuthService } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AuthComponent {
 
-  auth = inject(AuthService);
+  auth = inject(FirebaseService);
 
   login(): void{
     this.auth.loginGoogle();

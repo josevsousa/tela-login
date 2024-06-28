@@ -2,22 +2,25 @@ import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UtilsService } from '../services/utils.service';
-import { AuthService } from '../services/auth.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoAuthGuard implements CanActivate {
 
-  authService = inject(AuthService);
+  authService = inject(FirebaseService);
   utilsService = inject(UtilsService);
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    //esta online false
-    if (this.utilsService.getFromLocalStorage('user')) {
+    const user = this.utilsService.getFromLocalStorage('user');
+    const userGoogle = this.utilsService.getFromLocalStorage('userGoogle') 
+  
+    //esta online true
+    if (user || userGoogle) {
       return true;
     }
     else {

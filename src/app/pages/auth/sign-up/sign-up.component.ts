@@ -3,6 +3,7 @@ import { SectioncardComponent } from '../../../components-shared/section-card/se
 import { RouterModule } from '@angular/router';
 import { FormfullComponent } from '../../../components-shared/form-full/form-full.component';
 import { UtilsService } from '../../../services/utils.service';
+import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +18,8 @@ import { UtilsService } from '../../../services/utils.service';
 export class SignUpComponent implements OnInit {
 
   utilsService = inject(UtilsService);
-  photoAvatar: string | undefined = "../../../assets/imagens/photo-user.png";
+  firebaseService = inject(FirebaseService);
+  photoAvatar!: string | undefined;
 
   getImg(){
     return "background-image: url('"+this.photoAvatar+"');"
@@ -25,12 +27,21 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.getImg();
+    const photoURL = this.firebaseService.photoAvatar;
+    if (photoURL) {
+      this.photoAvatar = photoURL;
+    } else {
+      this.photoAvatar = "../../../assets/imagens/photo-user.png"; 
+    }
   }
 
-    //=========== Tirar/Selecionar Photo ==========
+    // //=========== Tirar/Selecionar Photo ==========
     async takeImage(){
       let dataUrl = (await this.utilsService.takePicture('Sua Imagem para o app')).dataUrl;
-      this.photoAvatar = dataUrl;
+      const photoAvatar = String(dataUrl);
+      this.photoAvatar = photoAvatar;
+      this.firebaseService.addPhotoAvatar(photoAvatar);
+      console.log("bbbb :",this.firebaseService.photoAvatar);
     }
   
 }

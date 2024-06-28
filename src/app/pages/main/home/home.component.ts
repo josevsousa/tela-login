@@ -3,7 +3,7 @@ import { SectioncardComponent } from '../../../components-shared/section-card/se
 import { InputPrimaryComponent } from '../../../components-shared/input-primary/input-primary.component';
 import { BottomPrimaryComponent } from '../../../components-shared/primary-bottom/primary-bottom.component';
 import { RouterLink } from '@angular/router';
-import { AuthService } from '../../../services/auth.service';
+import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +17,10 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  authService = inject(AuthService);
+  authService = inject(FirebaseService);
   
+  
+
   desconectar(): void {
     this.authService.desconectarGoogle();
   }
