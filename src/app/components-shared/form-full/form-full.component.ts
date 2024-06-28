@@ -65,7 +65,6 @@ export class FormfullComponent implements OnInit {
           // buscar o user no db
           // monstar o user no firestore
           const path = `/users/${user.user.uid}`;
-          console.log("path >> ", path);
           this.firebaseService.getDocument(path)
             .then(async resp => {
               await this.utilsService.saveInLocalStorage('user', resp);
