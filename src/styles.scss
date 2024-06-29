@@ -129,6 +129,7 @@ body {
       }
 
       .section-social {
+        margin-top: 23px;
         a {
           img {
             width: 38px;
@@ -208,10 +209,9 @@ body {
       width: 100%;
       padding: 15px;
 
-      section {
-        // padding: 7px;
+      section { 
         font-size: smaller !important;
-        padding: 70px 10px 0px 10px !important;
+        padding: 70px 10px 30px 10px !important;
 
         .form-links {
           gap: 9px !important;
