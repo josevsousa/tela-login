@@ -68,7 +68,7 @@ export class FirebaseService {
     }
     // ====== Desconectar
     desconectarGoogle() {
-      this.auth.signOut().then(() => {
+      this.auth.signOut().finally(() => {
         localStorage.clear();
         this.utilsService.routerLink('/');
       });

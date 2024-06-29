@@ -19,8 +19,6 @@ import { FirebaseService } from '../../../services/firebase.service';
 export class HomeComponent {
   authService = inject(FirebaseService);
   
-  
-
   desconectar(): void {
     this.authService.desconectarGoogle();
   }

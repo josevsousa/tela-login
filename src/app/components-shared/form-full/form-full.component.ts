@@ -24,7 +24,7 @@ import { User } from "../../interfaces/user.interface";
             <input-primary inp-title="password" [control]="form.controls.password"></input-primary>
           }
           @if (form.valid) {
-            <bottom-primary btn-title="{{formTipo}}" (click)="onSubmit()"></bottom-primary>
+            <bottom-primary btn-title="{{formTipo}}" [loading]="loading" (click)="onSubmit()"></bottom-primary>
           }@else {
           <bottom-primary-disabled btn-title="{{formTipo}}"></bottom-primary-disabled>
           }
@@ -37,6 +37,7 @@ export class FormfullComponent implements OnInit {
 
   @Input('form-tipo') formTipo!: string;
   pathImage!: any;
+  loading: boolean = false;
 
   firebaseService = inject(FirebaseService);
   utilsService = inject(UtilsService);
@@ -60,6 +61,7 @@ export class FormfullComponent implements OnInit {
 
     // this.formService.sendForm( this.form, this.formTipo);
     if (this.formTipo == 'login') {
+      this.loading = true;
       this.firebaseService.signIn(this.form.value as User)
         .then(user => {
           // buscar o user no db
@@ -69,6 +71,7 @@ export class FormfullComponent implements OnInit {
             .then(async resp => {
               await this.utilsService.saveInLocalStorage('user', resp);
               this.utilsService.routerLink('/home');
+            
 
             })
             .catch(err => console.log("erro da login", err))
@@ -76,7 +79,7 @@ export class FormfullComponent implements OnInit {
         })
 
     } else if (this.formTipo == 'registrar') {
-
+      this.loading = true;
       // registrando um user no fireauth
       this.firebaseService.signUp(this.form.value as User)
         .then( async resp => {

@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
     standalone: true,
     imports: [ UpperCasePipe ],
     template: `
-        <button  (click)="submit()">
+        <button>
             @if (!loading) {
                 {{ title | uppercase }}
             }@else {
@@ -22,10 +22,9 @@ export class BottomPrimaryComponent{
     @Input('btn-title') title!: string;
     @Input() loading: boolean = false;
     
-    @Output("submit") onSubmit = new EventEmitter();
+    // @Output("submit") onSubmit = new EventEmitter();
 
-    submit(){
-        console.log("passei aqui A");
-        this.onSubmit.emit();
-    }
+    // submit(){
+    //     this.onSubmit.emit();
+    // }
 }

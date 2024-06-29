@@ -1,0 +1,30 @@
+button.bt-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-3);
+    gap: 11px;
+    padding: 4px 24px;
+    border-radius: 8px;
+    border: solid var(--color-text-2);
+    cursor: pointer;
+    
+    img {
+        width: 32px;
+    }   
+
+    h3 {
+        color: var(--color-text-1);
+    }
+}   
+
+@media (max-width: 750px){
+
+    .bt-social {
+        h3 {
+            font-size: small; 
+        }
+    }
+
+}
