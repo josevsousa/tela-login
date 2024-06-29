@@ -103,8 +103,21 @@ export class FormfullComponent implements OnInit {
         .catch(err => console.log("erro no cadastro do user : ", err))
 
 
-    } else { }
+    } else {
+      
+      this.recoverEmail( String(this.form.value.email))
+    
+     }
 
+  }
+
+  recoverEmail(email: string): void{
+    this.firebaseService.sendRecoveryEmail(email)
+      .then(resp => console.log("resposta: ", resp))
+      .catch(err => console.log("erro no recover do email do firebase: ", err))
+      .finally(()=>{
+        this.utilsService.routerLink("/")
+      })
   }
 
 
@@ -121,5 +134,7 @@ export class FormfullComponent implements OnInit {
       })
 
   }
+
+
 
 }

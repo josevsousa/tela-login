@@ -15,4 +15,5 @@ import { FormfullComponent } from '../../../components-shared/form-full/form-ful
 })
 export class ForgotPasswordComponent {
 
+
 }
