@@ -7,13 +7,17 @@ import { BottomPrimaryDisabledComponent } from "../primary-bottom/primary-bottom
 import { UtilsService } from "../../services/utils.service";
 import { FirebaseService } from "../../services/firebase.service";
 import { User } from "../../interfaces/user.interface";
+import { ToastComponent } from "../toast-component/toast.component";
 
 
 @Component({
   selector: 'form-full',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, InputPrimaryComponent, BottomPrimaryComponent, BottomPrimaryDisabledComponent],
+  imports: [FormsModule, ReactiveFormsModule, InputPrimaryComponent, BottomPrimaryComponent, BottomPrimaryDisabledComponent, ToastComponent],
   template: `
+      @if(toastView){
+        <toast-component></toast-component>
+      }
       <form [formGroup]="form">
 
           @if(formTipo == 'registrar') {
@@ -39,9 +43,20 @@ export class FormfullComponent implements OnInit {
   @Input('form-tipo') formTipo!: string;
   pathImage!: any;
   loading: boolean = false;
+  toastView:boolean = false;
 
   firebaseService = inject(FirebaseService);
   utilsService = inject(UtilsService);
+
+  form = new FormGroup({
+    uid: new FormControl(''),
+    photoURL: new FormControl('../../../assets/imagens/photo-user.png'),
+    displayName: new FormControl('', [ Validators.required, Validators.minLength(3) ]),
+    email: new FormControl('', [ Validators.required, Validators.email ] ),
+    password: new FormControl('', [ Validators.required, Validators.minLength(6) ] )
+  })
+
+
 
   ngOnInit() {
     if (this.formTipo == 'recuperar') {
@@ -53,14 +68,13 @@ export class FormfullComponent implements OnInit {
     }
   }
 
-  form = new FormGroup({
-    uid: new FormControl(''),
-    photoURL: new FormControl('../../../assets/imagens/photo-user.png'),
-    displayName: new FormControl('', [ Validators.required, Validators.minLength(3) ]),
-    email: new FormControl('', [ Validators.required, Validators.email ] ),
-    password: new FormControl('', [ Validators.required, Validators.minLength(6) ] )
-  })
-
+  onToast(): void{
+    this.toastView = true;
+    setTimeout(()=>{
+      this.toastView = false;
+    }, 3000)
+    
+  }
 
   onSubmit() {
 
@@ -75,12 +89,16 @@ export class FormfullComponent implements OnInit {
           this.firebaseService.getDocument(path)
             .then(async resp => {
               await this.utilsService.saveInLocalStorage('user', resp);
-              this.utilsService.routerLink('/home');
-            
+              this.utilsService.routerLink('/home');            
 
             })
             .catch(err => console.log("erro da login", err))
-
+        })
+        .catch((err) => {
+          //volta o botao para 'login'
+          this.loading = false;
+          this.form.reset();
+          this.onToast();
         })
 
     } else if (this.formTipo == 'registrar') {
