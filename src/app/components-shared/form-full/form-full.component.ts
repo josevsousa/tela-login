@@ -20,6 +20,7 @@ import { User } from "../../interfaces/user.interface";
             <input-primary inp-title="name" [control]="form.controls.displayName"></input-primary>
           }
           <input-primary inp-title="email" [control]="form.controls.email"></input-primary>
+          
           @if(formTipo != 'recuperar'){
             <input-primary inp-title="password" [control]="form.controls.password"></input-primary>
           }
@@ -51,9 +52,9 @@ export class FormfullComponent implements OnInit {
   form = new FormGroup({
     uid: new FormControl(''),
     photoURL: new FormControl('../../../assets/imagens/photo-user.png'),
-    displayName: new FormControl(''),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    displayName: new FormControl('', [ Validators.required, Validators.minLength(3) ]),
+    email: new FormControl('', [ Validators.required, Validators.email ] ),
+    password: new FormControl('', [ Validators.required, Validators.minLength(6) ] )
   })
 
 

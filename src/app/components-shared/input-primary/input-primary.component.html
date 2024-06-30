@@ -1,4 +1,6 @@
-<div class="input-form">
-    <img src="../../../assets/input-icons/{{title}}.svg">
-    <input id="{{title}}" placeholder="{{title}}" type="{{title}}" [formControl]="control">
+<div class="{{title}}"  >
+    <div class="input-form" [ngClass]="{'erro': !this.control.valid && this.control.touched}">
+        <img src="../../../assets/input-icons/{{title}}.svg">
+        <input id="{{title}}" placeholder="{{title}}" type="{{title}}" [formControl]="control" >
+    </div>
 </div>

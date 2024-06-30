@@ -1,3 +1,9 @@
+.email, .name, .password {
+    .erro{
+        border: solid red !important;
+    }
+}
+
 .input-form {
     display: flex;
     flex-direction: row;
