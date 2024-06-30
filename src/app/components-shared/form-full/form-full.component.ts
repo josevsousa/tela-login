@@ -45,7 +45,11 @@ export class FormfullComponent implements OnInit {
 
   ngOnInit() {
     if (this.formTipo == 'recuperar') {
-      this.form.patchValue({ password: 'recuperar' });
+      this.form.controls.password.clearValidators();
+      this.form.controls.displayName.clearValidators();
+    }
+    if (this.formTipo == 'login'){
+      this.form.controls.displayName.clearValidators();
     }
   }
 
