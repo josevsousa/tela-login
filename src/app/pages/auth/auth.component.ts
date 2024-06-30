@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { SectioncardComponent } from '../../components-shared/section-card/section-card.component';
 
-import {  Router, RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 import { FormfullComponent } from '../../components-shared/form-full/form-full.component';
 import { FirebaseService } from '../../services/firebase.service';
 import { BtSocialComponent } from '../../components-shared/bt-social/bt-social.component';
-import { ToastComponent } from '../../components-shared/toast-component/toast.component';
 
 
 @Component({
@@ -15,8 +14,7 @@ import { ToastComponent } from '../../components-shared/toast-component/toast.co
     RouterModule,
     SectioncardComponent,
     FormfullComponent,
-    BtSocialComponent,
-    ToastComponent
+    BtSocialComponent
   ],
   templateUrl: './auth.component.html',
   styles: `.section-social a{ cursor: pointer}`
