@@ -4,7 +4,7 @@ import {Component} from "@angular/core";
     selector: 'toast-component',
     standalone: true,
     template: `
-        <div class="main">
+        <div class="main animate__animated">
             <h1>** Email ou Senha Invalido!! **</h1>
         </div>
     `,

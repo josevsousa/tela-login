@@ -1,13 +1,15 @@
 .main{
-    background: red;
+    background: #bc3f02;
     display: flex;
-    color: antiquewhite;
-    padding: 4px 24px;
-    border-radius: 10px;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 9px 27px;
+    color: azure;
+    border-radius: 25px;
 
     h1 { 
-        font-size: small;
-        font-weight: 800;
+        font-size: medium;
+        font-weight: 700;    
     }
 }

@@ -27,6 +27,6 @@
 
 Este repositório contém uma Tela de Login 'Tela-login' construída com Angular 17 no front end, firebase no back end, e figma na confecção do laytou. Em caso de alguma duvida na implementação pode entrar em contato comigo. Obrigado!
 
-<a href="http://josevicentedesousa.surge.sh">http://josevicentedesousa.surge.sh</a>
+<a href="http://josevicentedesousa.netlify.app">http://josevicentedesousa.netlify.app</a>
 
 
