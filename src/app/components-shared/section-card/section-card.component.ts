@@ -18,7 +18,7 @@ import { FirebaseService } from '../../services/firebase.service';
                         
                     </div>
                         <h1>Ola {{name}}!</h1>
-                    <p>Seja bem vindo a ess aplicação de tela de login!</p>
+                    <p>Seja bem vindo a essa aplicação de tela de login!</p>
                
             </div>
 
