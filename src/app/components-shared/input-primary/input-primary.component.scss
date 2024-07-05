@@ -33,6 +33,11 @@
 
 @media (max-width: 450px) {
     .input-form {
+        img {
+            width: 21px;
+            height: 23px;
+            margin-top: 6px;
+        }
         input {
             height: 36px;
         }
